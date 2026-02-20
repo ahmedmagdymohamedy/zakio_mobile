@@ -1,16 +1,27 @@
-# zakio
+# zee
 
-A new Flutter project.
+## App Icon Generate
+dart run flutter_launcher_icons -f flutter_launcher_icons.yaml
 
-## Getting Started
+## for build 
+dart run build_runner build --delete-conflicting-outputs
 
-This project is a starting point for a Flutter application.
+## Create easy_localization auto-generated classes
+flutter pub run easy_localization:generate -S ./assets/translations -f keys -o locale_keys.g.dart
 
-A few resources to get you started if this is your first Flutter project:
+# App Environments:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## develop
+build:
+    flutter build apk -t lib/dev_main.dart
+    flutter build ios -t lib/dev_main.dart
+run:
+    flutter run -t lib/dev_main.dart
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## live
+build:
+    flutter build apk -t lib/live_main.dart
+    flutter build aab -t lib/live_main.dart
+    flutter build ios -t lib/live_main.dart
+run:
+    flutter run -t lib/live_main.dart
