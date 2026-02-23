@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Child {
 
-@JsonKey(name: 'id', defaultValue: "") String get id;@JsonKey(name: 'created_at', defaultValue: "") String get createdAt;@JsonKey(name: 'name', defaultValue: "") String get name;
+@JsonKey(name: 'id', defaultValue: 0) int get id;@JsonKey(name: 'created_at', defaultValue: DateTime.now) DateTime get createdAt;@JsonKey(name: 'name', defaultValue: "") String get name;
 /// Create a copy of Child
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ChildCopyWith<$Res>  {
   factory $ChildCopyWith(Child value, $Res Function(Child) _then) = _$ChildCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'id', defaultValue: "") String id,@JsonKey(name: 'created_at', defaultValue: "") String createdAt,@JsonKey(name: 'name', defaultValue: "") String name
+@JsonKey(name: 'id', defaultValue: 0) int id,@JsonKey(name: 'created_at', defaultValue: DateTime.now) DateTime createdAt,@JsonKey(name: 'name', defaultValue: "") String name
 });
 
 
@@ -68,8 +68,8 @@ class _$ChildCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? createdAt = null,Object? name = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as int,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }
@@ -155,7 +155,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'id', defaultValue: "")  String id, @JsonKey(name: 'created_at', defaultValue: "")  String createdAt, @JsonKey(name: 'name', defaultValue: "")  String name)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'id', defaultValue: 0)  int id, @JsonKey(name: 'created_at', defaultValue: DateTime.now)  DateTime createdAt, @JsonKey(name: 'name', defaultValue: "")  String name)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Child() when $default != null:
 return $default(_that.id,_that.createdAt,_that.name);case _:
@@ -176,7 +176,7 @@ return $default(_that.id,_that.createdAt,_that.name);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'id', defaultValue: "")  String id, @JsonKey(name: 'created_at', defaultValue: "")  String createdAt, @JsonKey(name: 'name', defaultValue: "")  String name)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'id', defaultValue: 0)  int id, @JsonKey(name: 'created_at', defaultValue: DateTime.now)  DateTime createdAt, @JsonKey(name: 'name', defaultValue: "")  String name)  $default,) {final _that = this;
 switch (_that) {
 case _Child():
 return $default(_that.id,_that.createdAt,_that.name);case _:
@@ -196,7 +196,7 @@ return $default(_that.id,_that.createdAt,_that.name);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'id', defaultValue: "")  String id, @JsonKey(name: 'created_at', defaultValue: "")  String createdAt, @JsonKey(name: 'name', defaultValue: "")  String name)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'id', defaultValue: 0)  int id, @JsonKey(name: 'created_at', defaultValue: DateTime.now)  DateTime createdAt, @JsonKey(name: 'name', defaultValue: "")  String name)?  $default,) {final _that = this;
 switch (_that) {
 case _Child() when $default != null:
 return $default(_that.id,_that.createdAt,_that.name);case _:
@@ -211,11 +211,11 @@ return $default(_that.id,_that.createdAt,_that.name);case _:
 @JsonSerializable()
 
 class _Child implements Child {
-  const _Child({@JsonKey(name: 'id', defaultValue: "") required this.id, @JsonKey(name: 'created_at', defaultValue: "") required this.createdAt, @JsonKey(name: 'name', defaultValue: "") required this.name});
+  const _Child({@JsonKey(name: 'id', defaultValue: 0) required this.id, @JsonKey(name: 'created_at', defaultValue: DateTime.now) required this.createdAt, @JsonKey(name: 'name', defaultValue: "") required this.name});
   factory _Child.fromJson(Map<String, dynamic> json) => _$ChildFromJson(json);
 
-@override@JsonKey(name: 'id', defaultValue: "") final  String id;
-@override@JsonKey(name: 'created_at', defaultValue: "") final  String createdAt;
+@override@JsonKey(name: 'id', defaultValue: 0) final  int id;
+@override@JsonKey(name: 'created_at', defaultValue: DateTime.now) final  DateTime createdAt;
 @override@JsonKey(name: 'name', defaultValue: "") final  String name;
 
 /// Create a copy of Child
@@ -251,7 +251,7 @@ abstract mixin class _$ChildCopyWith<$Res> implements $ChildCopyWith<$Res> {
   factory _$ChildCopyWith(_Child value, $Res Function(_Child) _then) = __$ChildCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'id', defaultValue: "") String id,@JsonKey(name: 'created_at', defaultValue: "") String createdAt,@JsonKey(name: 'name', defaultValue: "") String name
+@JsonKey(name: 'id', defaultValue: 0) int id,@JsonKey(name: 'created_at', defaultValue: DateTime.now) DateTime createdAt,@JsonKey(name: 'name', defaultValue: "") String name
 });
 
 
@@ -271,8 +271,8 @@ class __$ChildCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? createdAt = null,Object? name = null,}) {
   return _then(_Child(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as int,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }

@@ -1,16 +1,24 @@
 import 'package:zakio/data/models/child/child.dart';
 import 'package:zakio/data/supabase/table/i_table.dart';
-import 'package:zakio/data/supabase/table/table_column.dart';
 
-class ChildrenTable extends ITable<Child> {
+class ChildrenTableColumn extends TableColumn {
+  // columns
+  static const id = ChildrenTableColumn(columnName: "id");
+  static const createdAt = ChildrenTableColumn(columnName: "created_at");
+  static const name = ChildrenTableColumn(columnName: "name");
+
+  const ChildrenTableColumn({required super.columnName});
+}
+
+class ChildrenTable extends ITable<Child, ChildrenTableColumn> {
   @override
   String get tableName => "children";
 
   @override
-  List<TableColumn> get columns => [
-    TableColumn(name: "id"),
-    TableColumn(name: "created_at"),
-    TableColumn(name: "name"),
+  List<ChildrenTableColumn> get columns => [
+    ChildrenTableColumn.id,
+    ChildrenTableColumn.createdAt,
+    ChildrenTableColumn.name,
   ];
 
   @override

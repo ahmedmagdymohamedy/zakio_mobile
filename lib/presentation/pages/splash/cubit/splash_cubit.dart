@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zakio/data/supabase/db_manager.dart';
+import 'package:zakio/data/supabase/table/tables/children_table.dart';
 import 'package:zakio/presentation/pages/splash/cubit/state/splash_state.dart';
 
 class SplashCubit extends Cubit<SplashState> {
@@ -17,7 +18,13 @@ class SplashCubit extends Cubit<SplashState> {
   }
 
   void onClick() async {
-    final children = await DBManager().childrenTable.select();
+    final children = await DBManager.childrenTable.select(
+      column: [
+        ChildrenTableColumn.id,
+        ChildrenTableColumn.name,
+        // ChildrenTableColumn.createdAt,
+      ],
+    );
     print(children);
   }
 }
