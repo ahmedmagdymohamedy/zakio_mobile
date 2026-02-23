@@ -11,14 +11,14 @@ flutter pub run easy_localization:generate -S ./assets/translations -f keys -o l
 
 # App Environments:
 
-## develop
+## dev Environment
 build:
     flutter build apk -t lib/dev_main.dart
     flutter build ios -t lib/dev_main.dart
 run:
     flutter run -t lib/dev_main.dart
 
-## live
+## live Environment
 build:
     flutter build apk -t lib/live_main.dart
     flutter build aab -t lib/live_main.dart

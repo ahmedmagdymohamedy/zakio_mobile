@@ -14,30 +14,73 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AppDataState {
 
-
+ AppConfig? get appConfig;
+/// Create a copy of AppDataState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AppDataStateCopyWith<AppDataState> get copyWith => _$AppDataStateCopyWithImpl<AppDataState>(this as AppDataState, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AppDataState);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AppDataState&&(identical(other.appConfig, appConfig) || other.appConfig == appConfig));
 }
 
 
 @override
-int get hashCode => runtimeType.hashCode;
+int get hashCode => Object.hash(runtimeType,appConfig);
 
 @override
 String toString() {
-  return 'AppDataState()';
+  return 'AppDataState(appConfig: $appConfig)';
 }
 
 
 }
 
 /// @nodoc
-class $AppDataStateCopyWith<$Res>  {
-$AppDataStateCopyWith(AppDataState _, $Res Function(AppDataState) __);
+abstract mixin class $AppDataStateCopyWith<$Res>  {
+  factory $AppDataStateCopyWith(AppDataState value, $Res Function(AppDataState) _then) = _$AppDataStateCopyWithImpl;
+@useResult
+$Res call({
+ AppConfig? appConfig
+});
+
+
+$AppConfigCopyWith<$Res>? get appConfig;
+
+}
+/// @nodoc
+class _$AppDataStateCopyWithImpl<$Res>
+    implements $AppDataStateCopyWith<$Res> {
+  _$AppDataStateCopyWithImpl(this._self, this._then);
+
+  final AppDataState _self;
+  final $Res Function(AppDataState) _then;
+
+/// Create a copy of AppDataState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? appConfig = freezed,}) {
+  return _then(_self.copyWith(
+appConfig: freezed == appConfig ? _self.appConfig : appConfig // ignore: cast_nullable_to_non_nullable
+as AppConfig?,
+  ));
+}
+/// Create a copy of AppDataState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AppConfigCopyWith<$Res>? get appConfig {
+    if (_self.appConfig == null) {
+    return null;
+  }
+
+  return $AppConfigCopyWith<$Res>(_self.appConfig!, (value) {
+    return _then(_self.copyWith(appConfig: value));
+  });
+}
 }
 
 
@@ -119,10 +162,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function()?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( AppConfig? appConfig)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AppDataState() when $default != null:
-return $default();case _:
+return $default(_that.appConfig);case _:
   return orElse();
 
 }
@@ -140,10 +183,10 @@ return $default();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function()  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( AppConfig? appConfig)  $default,) {final _that = this;
 switch (_that) {
 case _AppDataState():
-return $default();case _:
+return $default(_that.appConfig);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -160,10 +203,10 @@ return $default();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function()?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( AppConfig? appConfig)?  $default,) {final _that = this;
 switch (_that) {
 case _AppDataState() when $default != null:
-return $default();case _:
+return $default(_that.appConfig);case _:
   return null;
 
 }
@@ -175,32 +218,78 @@ return $default();case _:
 
 
 class _AppDataState implements AppDataState {
-  const _AppDataState();
+  const _AppDataState({this.appConfig});
   
 
+@override final  AppConfig? appConfig;
 
-
+/// Create a copy of AppDataState
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AppDataStateCopyWith<_AppDataState> get copyWith => __$AppDataStateCopyWithImpl<_AppDataState>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AppDataState);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AppDataState&&(identical(other.appConfig, appConfig) || other.appConfig == appConfig));
 }
 
 
 @override
-int get hashCode => runtimeType.hashCode;
+int get hashCode => Object.hash(runtimeType,appConfig);
 
 @override
 String toString() {
-  return 'AppDataState()';
+  return 'AppDataState(appConfig: $appConfig)';
 }
 
 
 }
 
+/// @nodoc
+abstract mixin class _$AppDataStateCopyWith<$Res> implements $AppDataStateCopyWith<$Res> {
+  factory _$AppDataStateCopyWith(_AppDataState value, $Res Function(_AppDataState) _then) = __$AppDataStateCopyWithImpl;
+@override @useResult
+$Res call({
+ AppConfig? appConfig
+});
 
 
+@override $AppConfigCopyWith<$Res>? get appConfig;
+
+}
+/// @nodoc
+class __$AppDataStateCopyWithImpl<$Res>
+    implements _$AppDataStateCopyWith<$Res> {
+  __$AppDataStateCopyWithImpl(this._self, this._then);
+
+  final _AppDataState _self;
+  final $Res Function(_AppDataState) _then;
+
+/// Create a copy of AppDataState
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? appConfig = freezed,}) {
+  return _then(_AppDataState(
+appConfig: freezed == appConfig ? _self.appConfig : appConfig // ignore: cast_nullable_to_non_nullable
+as AppConfig?,
+  ));
+}
+
+/// Create a copy of AppDataState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AppConfigCopyWith<$Res>? get appConfig {
+    if (_self.appConfig == null) {
+    return null;
+  }
+
+  return $AppConfigCopyWith<$Res>(_self.appConfig!, (value) {
+    return _then(_self.copyWith(appConfig: value));
+  });
+}
+}
 
 // dart format on
