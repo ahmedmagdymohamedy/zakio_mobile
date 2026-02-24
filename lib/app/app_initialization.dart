@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:zakio/core/managers/shared_preferences_manager.dart';
 import 'package:zakio/firebase_options.dart';
+import 'package:zakio_core/zakio_core.dart';
 
 class AppInitialization {
   static Future<void> init() async {
@@ -15,6 +16,7 @@ class AppInitialization {
     ]);
 
     await Future.wait([
+      ZakioCore.init(),
       SharedPreferencesManager.init(),
       EasyLocalization.ensureInitialized(),
       Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform),

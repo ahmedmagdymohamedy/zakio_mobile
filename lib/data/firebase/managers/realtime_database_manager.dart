@@ -1,5 +1,5 @@
 import 'package:firebase_database/firebase_database.dart';
-import 'package:zakio/data/repositories/app_config/app_config.dart';
+import 'package:zakio_core/data/models/app_config/app_config.dart';
 
 const String APP_CONFIG_PATH = "app_config";
 

@@ -1050,6 +1050,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.0"
+  zakio_core:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: main
+      resolved-ref: "5a84e4907c6ff8a88ce74e0ce911e48ccef30869"
+      url: "git@github.com:ahmedmagdymohamedy/zakio_core.git"
+    source: git
+    version: "0.0.1"
 sdks:
   dart: ">=3.9.2 <4.0.0"
   flutter: ">=3.35.0"

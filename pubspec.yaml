@@ -30,6 +30,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # zakio_core
+  zakio_core:
+    git:
+      url: git@github.com:ahmedmagdymohamedy/zakio_core.git
+      # ref: v1.0.0
+      ref: main
+  ##
 
   # FireBase
   firebase_core: ^4.4.0

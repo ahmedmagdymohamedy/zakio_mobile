@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:zakio/data/supabase/db_manager.dart';
-import 'package:zakio/data/supabase/table/db_controllers/db_column_value.dart';
-import 'package:zakio/data/supabase/table/db_controllers/db_range_values.dart';
-import 'package:zakio/data/supabase/table/tables/children_table.dart';
+import 'package:zakio_core/data/supabase/db_manager.dart';
+import 'package:zakio_core/data/supabase/table/db_controllers/db_column_value.dart';
+import 'package:zakio_core/data/supabase/table/tables/children_table.dart';
 import 'package:zakio/presentation/pages/splash/cubit/state/splash_state.dart';
 
 class SplashCubit extends Cubit<SplashState> {

@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:zakio/data/repositories/app_config/app_config.dart';
+import 'package:zakio_core/data/models/app_config/app_config.dart';
 
 part 'app_data_state.freezed.dart';
 
