@@ -1,4 +1,3 @@
-import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:zakio/data/supabase/db_logger_manager.dart';
 import 'package:zakio/data/supabase/supabase_manager.dart';
 import 'package:zakio/data/supabase/table/db_controllers/db_column_value.dart';
@@ -20,9 +19,14 @@ abstract class ITable<T, C extends TableColumn> {
   T toModel(Map<String, dynamic> map);
 
   Future<dynamic> onQuery(dynamic queryCall, {String operation = ""}) async {
-    final result = await queryCall;
-    DBLoggerManager.logResponse(operation, tableName, result);
-    return result;
+    try {
+      final result = await queryCall;
+      DBLoggerManager.logResponse(operation, tableName, result);
+      return result;
+    } catch (e) {
+      DBLoggerManager.logError(operation, tableName, e);
+      return null;
+    }
   }
 
   Future<List<T>> select({
@@ -36,10 +40,11 @@ abstract class ITable<T, C extends TableColumn> {
     int? limit = 20,
     C? orderBy,
     DbRangeValues? range,
+    /// [isSinlge] if true, it will return single item or empty list if not found, if false, it will return list of items
     bool isSinlge = false,
   }) async {
     // check if developer selected single item but not provided isEqual condition
-    assert (!isSinlge || isEqual != null);
+    assert(!isSinlge || isEqual != null);
 
     dynamic query = SupabaseManager.supabase
         .from(tableName) //
@@ -92,7 +97,7 @@ abstract class ITable<T, C extends TableColumn> {
 
     // check if there is single
     if (isSinlge) {
-      query = query.single();
+      query = query.maybeSingle();
     }
 
     dynamic queryResult = await onQuery(query, operation: 'SELECT');
@@ -101,7 +106,11 @@ abstract class ITable<T, C extends TableColumn> {
     List<Map<String, dynamic>> result = [];
 
     if (isSinlge) {
-      result = [queryResult];
+      if (queryResult == null) {
+        result = [];
+      } else {
+        result = [queryResult];
+      }
     } else {
       result = List<Map<String, dynamic>>.from(queryResult);
     }

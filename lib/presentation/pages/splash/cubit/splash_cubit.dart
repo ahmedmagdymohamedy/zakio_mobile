@@ -28,11 +28,11 @@ class SplashCubit extends Cubit<SplashState> {
       ],
       isEqual: DBColumnValue(
         tableColumns: [ChildrenTableColumn.name],
-        value: "Alsaa",
+        value: "Alaa",
       ),
       // orderBy: ChildrenTableColumn.name,
       // limit: 1,
-      range: DbRangeValues(from: 0, to: 10),
+      // range: DbRangeValues(from: 0, to: 10),
       isSinlge: true,
     );
     print(children);
