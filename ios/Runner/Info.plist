@@ -45,5 +45,20 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+
+	<!-- For supabase Deep Links -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+		<key>CFBundleTypeRole</key>
+		<string>Editor</string>
+		<key>CFBundleURLSchemes</key>
+		<!-- TODO: change this to our scheme to our domain later-->
+		<array>
+			<string>io.supabase.flutterquickstart</string>
+		</array>
+		</dict>
+	</array>
+	<!-- End supabase Deep Links -->
 </dict>
 </plist>

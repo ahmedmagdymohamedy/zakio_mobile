@@ -25,7 +25,7 @@ class SplashScreen extends StatelessWidget {
                 children: [
                   Expanded(child: SizedBox()),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    padding: const EdgeInsets.all(16),
                     child: ClickableWidget(
                       onTap: cubit.onClick,
                       child: Container(
