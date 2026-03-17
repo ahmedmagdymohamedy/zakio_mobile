@@ -1053,11 +1053,9 @@ packages:
   zakio_core:
     dependency: "direct main"
     description:
-      path: "."
-      ref: main
-      resolved-ref: a1ef3ab05214a367fc771ef96f15415eb3b2f5de
-      url: "git@github.com:ahmedmagdymohamedy/zakio_core.git"
-    source: git
+      path: "../zakio_core"
+      relative: true
+    source: path
     version: "0.0.1"
 sdks:
   dart: ">=3.9.2 <4.0.0"
