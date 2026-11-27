@@ -45,6 +45,7 @@ class DefaultFirebaseOptions {
     appId: '1:1088704205561:web:9bd67d1298eeb2ea970828',
     messagingSenderId: '1088704205561',
     projectId: 'zakio-2e280',
+    databaseURL: 'https://zakio-2e280-default-rtdb.europe-west1.firebasedatabase.app',
     authDomain: 'zakio-2e280.firebaseapp.com',
     storageBucket: 'zakio-2e280.firebasestorage.app',
     measurementId: 'G-TXM2BV4M1Y',
@@ -55,6 +56,7 @@ class DefaultFirebaseOptions {
     appId: '1:1088704205561:android:d7e5de9efca98523970828',
     messagingSenderId: '1088704205561',
     projectId: 'zakio-2e280',
+    databaseURL: 'https://zakio-2e280-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'zakio-2e280.firebasestorage.app',
   );
 
@@ -63,6 +65,7 @@ class DefaultFirebaseOptions {
     appId: '1:1088704205561:ios:7f7ca4ee521f5b06970828',
     messagingSenderId: '1088704205561',
     projectId: 'zakio-2e280',
+    databaseURL: 'https://zakio-2e280-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'zakio-2e280.firebasestorage.app',
     iosBundleId: 'com.megz.zakio',
   );
@@ -72,6 +75,7 @@ class DefaultFirebaseOptions {
     appId: '1:1088704205561:ios:7f7ca4ee521f5b06970828',
     messagingSenderId: '1088704205561',
     projectId: 'zakio-2e280',
+    databaseURL: 'https://zakio-2e280-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'zakio-2e280.firebasestorage.app',
     iosBundleId: 'com.megz.zakio',
   );
@@ -81,6 +85,7 @@ class DefaultFirebaseOptions {
     appId: '1:1088704205561:web:4f547aef7e7772ee970828',
     messagingSenderId: '1088704205561',
     projectId: 'zakio-2e280',
+    databaseURL: 'https://zakio-2e280-default-rtdb.europe-west1.firebasedatabase.app',
     authDomain: 'zakio-2e280.firebaseapp.com',
     storageBucket: 'zakio-2e280.firebasestorage.app',
     measurementId: 'G-E61GLT8C99',
