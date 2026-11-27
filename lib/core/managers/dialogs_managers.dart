@@ -30,7 +30,7 @@ class DialogsManager {
   }) async {
     return await showGeneralDialog<T>(
       context: appContext,
-      barrierColor: barrierColor ?? Colors.black.withOpacity(0.5),
+      barrierColor: barrierColor ?? Colors.black.withValues(alpha: 0.5),
       barrierDismissible: barrierDismissible,
       barrierLabel: barrierLabel,
       transitionDuration: Duration(milliseconds: animationDurationInMilliseconds),

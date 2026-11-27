@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:zakio_core/data/supabase/auth/auth_manager.dart';
-import 'package:zakio_core/data/supabase/supabase_manager.dart';
 import 'package:zakio/presentation/pages/splash/cubit/state/splash_state.dart';
 
 class SplashCubit extends Cubit<SplashState> {
@@ -11,37 +9,7 @@ class SplashCubit extends Cubit<SplashState> {
 
   static SplashCubit get(BuildContext context) => BlocProvider.of<SplashCubit>(context);
 
-  void init() async {
-    // RealtimeDatabaseManager.listenAppConfig((appConfig) {
-    //   AppDataCubit.get(appContext).setAppConfig(appConfig);
-    // });
-  }
+  void init() async {}
 
-  void onClick() async {
-    bool res = await AuthManager.signInWithOtp("ahmedmagdymohamedy@gmail.com", () {
-      print("Logged in successfully");
-      print("__________________________________");
-      print(SupabaseManager.supabase.auth.currentUser?.email);
-      print("__________________________________");
-    });
-
-    print("is sent: $res");
-
-    // final children = await DBManager.childrenTable.select(
-    //   column: [
-    //     ChildrenTableColumn.id,
-    //     ChildrenTableColumn.name,
-    //     // ChildrenTableColumn.createdAt,
-    //   ],
-    //   isEqual: DBColumnValue(
-    //     tableColumns: [ChildrenTableColumn.name],
-    //     value: "Alaa",
-    //   ),
-    //   // orderBy: ChildrenTableColumn.name,
-    //   // limit: 1,
-    //   // range: DbRangeValues(from: 0, to: 10),
-    //   isSinlge: true,
-    // );
-    // print(children);
-  }
+  void onClick() async {}
 }

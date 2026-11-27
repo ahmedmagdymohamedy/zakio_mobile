@@ -7,5 +7,5 @@ Future<void> main() async {
     enableTestingTools: false,
   );
 
-  runZakioApp();
+  await runZakioApp();
 }

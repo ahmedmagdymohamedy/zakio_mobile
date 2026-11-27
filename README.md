@@ -3,8 +3,12 @@
 ## App Icon Generate
 dart run flutter_launcher_icons -f flutter_launcher_icons.yaml
 
-## To update Zakio Core code
-flutter pub upgrade zakio_core
+## Backend
+Firebase (see `lib/firebase_options.dart`, regenerate with `flutterfire configure`).
+
+## Fonts
+Cairo (Arabic + Latin, SIL OFL 1.1) in `assets/fonts/cairo/`, declared in `pubspec.yaml`
+and used through `lib/core/resources/app_fonts.dart`.
 
 ## for build 
 dart run build_runner build --delete-conflicting-outputs

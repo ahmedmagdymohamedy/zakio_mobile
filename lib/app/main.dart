@@ -13,9 +13,9 @@ Future<void> runZakioApp() async {
 
   runApp(
     EasyLocalization(
-      supportedLocales: [for (var value in LanguageType.values) Locale(value.getValue())],
+      supportedLocales: [for (final language in LanguageType.values) Locale(language.code)],
       path: AppAssets.localizationPath,
-      fallbackLocale: Locale(LanguageType.ENGLISH.getValue()),
+      fallbackLocale: Locale(LanguageType.english.code),
       child: const MyApp(),
     ),
   );

@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:zakio/core/resources/string_keys.dart';
 import 'package:zakio/presentation/pages/splash/cubit/splash_cubit.dart';
 import 'package:zakio/presentation/pages/splash/cubit/state/splash_state.dart';
-import 'package:zakio/presentation/widgets/clickable_widget.dart';
+import 'package:zakio/presentation/widgets/app_button.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({
@@ -23,25 +25,12 @@ class SplashScreen extends StatelessWidget {
             body: SafeArea(
               child: Column(
                 children: [
-                  Expanded(child: SizedBox()),
+                  const Spacer(),
                   Padding(
                     padding: const EdgeInsets.all(16),
-                    child: ClickableWidget(
+                    child: AppButton(
+                      text: StringKeys.getStarted.tr(),
                       onTap: cubit.onClick,
-                      child: Container(
-                        height: 60,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Colors.green,
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Get Started',
-                            style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
                     ),
                   ),
                 ],

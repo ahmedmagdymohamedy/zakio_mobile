@@ -6,11 +6,12 @@ import 'package:flutter/material.dart';
 
 ThemeData getAppTheme(BuildContext context) {
   return ThemeData(
+    fontFamily: AppFonts.bodyFont(context),
     primaryColor: AppColors.primary,
     disabledColor: AppColors.lightGray,
     scaffoldBackgroundColor: Colors.white,
-    splashColor: AppColors.primary.withOpacity(0.1),
-    highlightColor: AppColors.primary.withOpacity(0.1),
+    splashColor: AppColors.primary.withValues(alpha: 0.1),
+    highlightColor: AppColors.primary.withValues(alpha: 0.1),
     // app bar
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.transparent,

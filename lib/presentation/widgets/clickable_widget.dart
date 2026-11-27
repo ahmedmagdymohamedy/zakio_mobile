@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 
 class ClickableWidget extends StatefulWidget {
   final Widget child;
-  final VoidCallback onTap;
+
+  /// When null the widget is disabled: no press animation and no haptics.
+  final VoidCallback? onTap;
   final Color? shadowColor;
   const ClickableWidget({
     super.key,
@@ -43,11 +44,19 @@ class _ClickableWidgetState extends State<ClickableWidget> {
   }
 
   @override
+  void didUpdateWidget(covariant ClickableWidget oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // If it gets disabled mid-press (e.g. starts loading), don't stay pressed.
+    if (widget.onTap == null) offsetY = -gap;
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final bool isEnabled = widget.onTap != null;
     return GestureDetector(
-      onTapDown: _onTapDown,
-      onTapUp: _onTapUp,
-      onTapCancel: _onTapCancel,
+      onTapDown: isEnabled ? _onTapDown : null,
+      onTapUp: isEnabled ? _onTapUp : null,
+      onTapCancel: isEnabled ? _onTapCancel : null,
       onTap: widget.onTap,
       child: Stack(
         children: [

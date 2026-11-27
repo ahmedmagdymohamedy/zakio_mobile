@@ -4,24 +4,17 @@
 // and don't forget to add a new json file on translations
 
 // and add new lang to ios/Runner/Info.plist
-// <key>CFabaqleLocalizations</key>
+// <key>CFBundleLocalizations</key>
 // <array>
 // 	<string>en</string>
 // 	<string>ar</string>
 // </array>
 
-enum LanguageType { ENGLISH, ARABIC }
+enum LanguageType {
+  english("en"),
+  arabic("ar");
 
-const String ENGLISH = "en";
-const String ARABIC = "ar";
+  const LanguageType(this.code);
 
-extension LanguageTypeExtension on LanguageType {
-  String getValue() {
-    switch (this) {
-      case LanguageType.ENGLISH:
-        return ENGLISH;
-      case LanguageType.ARABIC:
-        return ARABIC;
-    }
-  }
+  final String code;
 }
