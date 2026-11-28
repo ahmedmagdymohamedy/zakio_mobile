@@ -1,0 +1,7 @@
+---
+description: Redirect to centralized clean_code rule
+alwaysApply: true
+---
+
+Use canonical rule file only:
+.ai/rules/clean_code.md

@@ -1,0 +1,7 @@
+---
+description: Redirect to centralized short_final_reply rule
+alwaysApply: true
+---
+
+Use canonical rule file only:
+.ai/rules/short_final_reply.md

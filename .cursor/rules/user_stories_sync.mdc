@@ -1,0 +1,7 @@
+---
+description: Redirect to centralized user_stories_sync rule
+alwaysApply: true
+---
+
+Use canonical rule file only:
+.ai/rules/user_stories_sync.md

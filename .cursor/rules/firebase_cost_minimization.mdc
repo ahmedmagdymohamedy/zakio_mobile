@@ -1,0 +1,7 @@
+---
+description: Redirect to centralized firebase_cost_minimization rule
+alwaysApply: true
+---
+
+Use canonical rule file only:
+.ai/rules/firebase_cost_minimization.md

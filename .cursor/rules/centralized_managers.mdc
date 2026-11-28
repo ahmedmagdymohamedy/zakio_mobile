@@ -1,0 +1,7 @@
+---
+description: Redirect to centralized centralized_managers rule
+alwaysApply: true
+---
+
+Use canonical rule file only:
+.ai/rules/centralized_managers.md

@@ -47,3 +47,14 @@ app.*.map.json
 # Gradle root-project output (reports, kotlin caches)
 /android/build/
 /android/.kotlin/
+
+# Release (scripts/deploy_stores.sh)
+# Dart obfuscation symbols, one folder per release — kept outside build/ so
+# `flutter clean` cannot delete them. Never commit, never delete.
+/build_symbols/
+# Crashlytics symbol-upload tool cache.
+/.crashlytics/
+# The Play service-account key lives beside the other Android signing secrets
+# (android/key.properties, the keystore).
+/android/play-service-account.json
+/android/*service-account*.json

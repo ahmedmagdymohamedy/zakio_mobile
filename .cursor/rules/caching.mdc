@@ -1,0 +1,7 @@
+---
+description: Redirect to centralized caching rule
+alwaysApply: true
+---
+
+Use canonical rule file only:
+.ai/rules/caching.md
